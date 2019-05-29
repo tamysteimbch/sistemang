@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { ClienteComponent } from './cliente/cliente.component';
+import { ProdutoComponent } from './produto/produto.component';
 
 import { FormsModule } from '@angular/forms';
 
@@ -24,7 +25,8 @@ import { environment } from '../environments/environment';
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    ClienteComponent 
+    ClienteComponent,
+    ProdutoComponent
   ],
   providers: [AngularFireModule],
   bootstrap: [AppComponent]

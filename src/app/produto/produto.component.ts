@@ -1,5 +1,5 @@
 import { OnInit, Component, NgModule } from '@angular/core';
-import { Cliente } from './cliente.model';
+import { Produto } from './produto.model';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { FormsModule } from '@angular/forms';
 import { CommonModule  } from '@angular/common'
@@ -7,29 +7,29 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Component({
-    selector: 'cliente',
-    templateUrl: './cliente.component.html',
+    selector: 'produto',
+    templateUrl: './produto.component.html',
     })
 
 @NgModule({
     imports: [FormsModule, CommonModule ],
-    declarations: [ ClienteComponent ]
+    declarations: [ ProdutoComponent ]
 })
 
-export class ClienteComponent implements OnInit {
+export class ProdutoComponent implements OnInit {
 
-    cliente: Cliente;
-    clientes: Cliente[] = [];
+    produto: Produto;
+    produtos: Produto[] = [];
 
     constructor(private db: AngularFireDatabase){   }
 
     ngOnInit(): void{
-        this.cliente = new Cliente();
+        this.produto = new Produto();
         this.listar();
     }
 
     salvar(){
-        this.db.list('clientes').push(this.cliente)
+        this.db.list('produtos').push(this.produto)
             .then((result: any)=>{
                 console.log(result.key);
             });
@@ -37,14 +37,14 @@ export class ClienteComponent implements OnInit {
     
     listar(){
         this.getAll().subscribe(
-            clientes => this.clientes = clientes,
+            produtos => this.produtos = produtos,
             error => alert(error),
             () => console.log("terminou")
           ); 
     }
 
     getAll() : Observable<any[]> {
-        return this.db.list('clientes')
+        return this.db.list('produtos')
             .snapshotChanges()
             .pipe(
                 map(changes => {
