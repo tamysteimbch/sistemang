@@ -1,0 +1,41 @@
+<form>
+    <div class="form-group">
+        <label for="id">Id</label>
+        <input type="number" class="form-control" id="id" name="id"
+                placeholder="Digite o ID"
+                [(ngModel)]="loja.id">
+    </div>  
+    <div class="form-group">
+        <label for="nomeLoja">Nome fantasia</label>
+        <input type="text" class="form-control" id="nomeLoja" name="nomeLoja"
+                placeholder="digite o nome fantasia da filial"
+                [(ngModel)]="loja.nomeLoja">
+    </div>    
+    <div class="form-group">
+        <label for="endereco
+        ">Endereço</label>
+        <input type="text" class="form-control" id="endereco
+        " name="endereco
+        "
+        [(ngModel)]="loja.endereco
+        ">
+    </div>
+    <button class="btn btn-primary" (click)="salvar()">Salvar</button> 
+</form>`
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>    
+            <th>Nome Fantasia</th>    
+            <th>Endereço</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let loja of lojas">
+            <td>{{ loja.key }}</td>
+            <td>{{ loja.nomeLoja }}</td>
+            <td>{{ loja.endereco }}</td>
+        </tr>
+    </tbody>
+</table>
