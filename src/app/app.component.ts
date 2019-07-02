@@ -2,13 +2,7 @@ import { Component } from '@angular/core';
  
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-    getUrl()
-  {
-    return "url('./wallpaper.jpg')";
-  }
-})
+  templateUrl: './app.component.html',})
 export class AppComponent {
   title = 'sistemang';
 }

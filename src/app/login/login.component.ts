@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { OnInit, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common'
-
 import { LoginService } from './login.service';
 
 @Component({
@@ -29,7 +28,7 @@ export class LoginComponent implements OnInit {
     }
 
     logar() {
-        this.loginService.login(this.email,this.senha);
+        this.loginService.login(this.email, this.senha);
     }
 
 }
